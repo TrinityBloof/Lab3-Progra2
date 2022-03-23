@@ -8,7 +8,7 @@ package GUI;
 import codigo.*;
 import java.awt.*;
 import java.util.ArrayList;
-import objetos.GraficaPastel;
+import objetos.Grafico;
 import org.jfree.chart.*;
 import org.jfree.data.general.DefaultPieDataset;
 
@@ -24,12 +24,12 @@ public class pnlGrafico extends javax.swing.JPanel {
     public pnlGrafico() {
         initComponents();
         
-        GraficaPastel.listaDatos = new ArrayList<>();
-        ArrayList<GraficaPastel> listaDatos = cargas.cargarGrafico();
+        Grafico.listaDatos = new ArrayList<>();
+        ArrayList<Grafico> listaDatos = cargas.cargarGrafico();
         Object[] arreglo = new Object[2];
         for (int i = 0; i < listaDatos.size(); i++) {
-            arreglo[0] = listaDatos.get(i).getNombre();
-            arreglo[1] = listaDatos.get(i).getCantidad();
+            arreglo[0] = listaDatos.get(i).getNombreAerolinea();
+            arreglo[1] = listaDatos.get(i).getCantidadViajes();
             String nombre = (String) arreglo[0];
             int cantidad = (int) arreglo[1];
             datos.setValue(nombre, cantidad);
@@ -53,6 +53,7 @@ public class pnlGrafico extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 0));
@@ -68,26 +69,36 @@ public class pnlGrafico extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("cuantos viajes ha realizado cada avión que tenga vuelos registrados, y que su tipo de aerolinia sea internacional");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(282, 282, 282)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(309, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(291, 291, 291))
+                .addGap(292, 292, 292))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(158, 158, 158)
+                .addContainerGap(131, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(41, 41, 41)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

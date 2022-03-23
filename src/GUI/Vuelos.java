@@ -5,7 +5,7 @@
  */
 package GUI;
 
-public class Delincuentes {
+public class Vuelos {
    
     public static void main(String[] args) {
         Gui gui = new Gui();

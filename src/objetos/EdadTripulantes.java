@@ -6,29 +6,26 @@
 package objetos;
 
 import java.util.ArrayList;
+import java.util.Date;
 
-public class GraficaPastel {
+/**
+ *
+ * @author gara8
+ */
+public class EdadTripulantes {
     
-    private Integer cantidad;
     private String nombre;
+    private Integer edad;
     
-    public static ArrayList listaDatos = new ArrayList<>();
+    public static ArrayList listaEdadTripulantes = new ArrayList<>();
     
-    public GraficaPastel(String nombre, Integer cantidad) {
+    public EdadTripulantes(String nombre, Integer edad) {
+        this.edad = edad;
         this.nombre = nombre;
-        this.cantidad = cantidad;
     }
 
-    public GraficaPastel() {
+    public EdadTripulantes() {
 
-    }
-
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
     }
 
     public String getNombre() {
@@ -38,6 +35,16 @@ public class GraficaPastel {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+    
+    
     
     
 }

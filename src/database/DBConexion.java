@@ -13,13 +13,8 @@ public class DBConexion {
     
     Connection conectar = null;
     
-    
-    public Connection getConexion() {
-        return conectar;
-    }
-    
     public Connection Conexion() {
-        String url = "jdbc:postgresql://localhost:5432/seguridad";
+        String url = "jdbc:postgresql://localhost:5432/vuelos";
         String password = "1234";
         try {
             Class.forName("org.postgresql.Driver");
@@ -28,13 +23,5 @@ public class DBConexion {
             JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos, error: " + e.toString() );
         }
         return conectar;
-    }
-    
-    public void cerrarConexion() {
-        try {
-            conectar.close();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error: " + e.toString() );
-        }
     }
 }

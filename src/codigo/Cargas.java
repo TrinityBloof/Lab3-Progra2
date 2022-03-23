@@ -8,7 +8,6 @@ package codigo;
 import java.util.ArrayList;
 import objetos.*;
 import database.*;
-import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -18,113 +17,43 @@ public class Cargas {
     
     DBCargas cargas = new DBCargas();
     
-    public ArrayList<GraficaPastel> cargarGrafico() {
-        ArrayList<GraficaPastel> listaGrafico = cargas.cargarGrafico();
+    public ArrayList<Grafico> cargarGrafico() {
+        ArrayList<Grafico> listaGrafico = cargas.cargarGrafico();
         return listaGrafico;
     }
     
-    public ArrayList<TiposDelincuentes> cargarTiposDelincuentes() {
-        ArrayList<TiposDelincuentes> listaTiposDelincuentes = cargas.cargarTiposDelicuentes();
-        return listaTiposDelincuentes;
-    }
-    
-    public DefaultComboBoxModel cargarCodigos() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        ArrayList<Integer> listaCodigos = cargas.cargarCodigosTiposDelincuentes();
-        for (Integer codigo : listaCodigos) {
-            modelo.addElement(codigo);
-        }
-        return modelo;
-    }
-    
-    public TiposDelincuentes cargarUnTipoDelincuente(Integer codigo) {
-        TiposDelincuentes datos = cargas.cargarUnTipoDelincuente(codigo);
-        return datos;
+    public ArrayList<VuelosPorAvion> cargarVuelosPorAvion() {
+        ArrayList<VuelosPorAvion> listaVuelosPorAvion = cargas.cargarVuelosPorAvion();
+        return listaVuelosPorAvion;
     }
     
     
-    public ArrayList<Organizaciones> cargarOrganizaciones() {
-        ArrayList<Organizaciones> listaOrganizaciones = cargas.cargarOrganizaciones();
-        return listaOrganizaciones;
-    }
-    
-    public DefaultComboBoxModel cargarCodigosOrganizaciones() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        ArrayList<Integer> listaCodigos = cargas.cargarCodigosOrganizaciones();
-        for (Integer codigo : listaCodigos) {
-            modelo.addElement(codigo);
-        }
-        return modelo;
-    }
-    
-    public Organizaciones cargarUnaOrganizacion(Integer codigo) {
-        Organizaciones datos = cargas.cargarUnaOrganizacion(codigo);
-        return datos;
+    public ArrayList<TripulantesServicioCliente> cargarTripulantesServicioCliente() {
+        ArrayList<TripulantesServicioCliente> listaTripulantesServicioCliente = cargas.cargarTripulantesServicioCliente();
+        return listaTripulantesServicioCliente;
     }
     
     
     
-    public ArrayList<Delincuentes> cargarDelincuentes() {
-        ArrayList<Delincuentes> listaDelincuentes = cargas.cargarDelincuentes();
-        return listaDelincuentes;
-    }
-    
-    public DefaultComboBoxModel cargarCodigosDelincuentes() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        ArrayList<Integer> listaCodigos = cargas.cargarCodigosDelincuentes();
-        for (Integer codigo : listaCodigos) {
-            modelo.addElement(codigo);
-        }
-        return modelo;
-    }
-    
-    public Delincuentes cargarUnDelincuentes(Integer codigo) {
-        Delincuentes datos = cargas.cargarUnDelincuente(codigo);
-        return datos;
+    public ArrayList<PilotoVueloRegistrado> cargarPilotoVueloRegistrado() {
+        ArrayList<PilotoVueloRegistrado> listaPilotoVueloRegistrado = cargas.cargarPilotoVueloRegistrado();
+        return listaPilotoVueloRegistrado;
     }
     
     
-    public ArrayList<Agentes> cargarAgentes() {
-        ArrayList<Agentes> listaAgentes = cargas.cargarAgentes();
-        return listaAgentes;
-    }
-    
-    public DefaultComboBoxModel cargarCodigosAgentes() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        ArrayList<Integer> listaCodigos = cargas.cargarCodigosAgentes();
-        for (Integer codigo : listaCodigos) {
-            modelo.addElement(codigo);
-        }
-        return modelo;
-    }
-    
-    public Agentes cargarUnAgente(Integer codigo) {
-        Agentes datos = cargas.cargarUnAgente(codigo);
-        return datos;
+    public ArrayList<VuelosPorAerolinea> cargarVueloPorAerolinea() {
+        ArrayList<VuelosPorAerolinea> listaVuelosPorAerolinea = cargas.cargarVueloPorAerolinea();
+        return listaVuelosPorAerolinea;
     }
     
     
-    public ArrayList<ReAgentesDelincuentes> cargarRelacion() {
-        ArrayList<ReAgentesDelincuentes> listaRelacion = cargas.cargarRelacion();
-        return listaRelacion;
+    public ArrayList<VuelosSalidaPanama> cargarVuelosSalidaPanama() {
+        ArrayList<VuelosSalidaPanama> listaVuelosSalidaPanama = cargas.cargarVuelosSalidaPanama();
+        return listaVuelosSalidaPanama;
     }
     
-    public DefaultComboBoxModel cargarCodigosRelacion() {
-        DefaultComboBoxModel modelo = new DefaultComboBoxModel();
-        ArrayList<Integer> listaCodigos = cargas.cargarCodigosRelacion();
-        for (Integer codigo : listaCodigos) {
-            modelo.addElement(codigo);
-        }
-        return modelo;
-    }
-    
-    public ReAgentesDelincuentes cargarUnaRelacion(Integer codigo) {
-        ReAgentesDelincuentes datos = cargas.cargarUnaRelacion(codigo);
-        return datos;
-    }
-    
-    public ArrayList<Reporte> cargarReporte(Integer codigo) {
-        ArrayList<Reporte> listaReporte = cargas.cargarReporte(codigo);
-        return listaReporte;
+    public ArrayList<EdadTripulantes> cargarEdadTripulantes() {
+        ArrayList<EdadTripulantes> listaEdadTripulantes = cargas.cargarEdadTripulantes();
+        return listaEdadTripulantes;
     }
 }
